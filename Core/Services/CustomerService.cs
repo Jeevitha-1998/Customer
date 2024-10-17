@@ -41,5 +41,15 @@ namespace Core.Services
         {
             await _customerRepository.DeleteCustomerAsync(id);
         }
+
+        public async Task<IEnumerable<CustomerOrder>> GetCustomerOrderDetails(int id)
+        {
+            return await _customerRepository.GetCustomerOrderDetails(id);
+        }
+
+        public async Task<IEnumerable<CustomerOrder>> GetOrderPlacedCustomerDetails()
+        {
+            return await _customerRepository.GetOrderPlacedCustomerDetails();
+        }
     }
 }

@@ -14,5 +14,7 @@ namespace Core.Interfaces
         Task AddCustomerAsync(Customer customer);
         Task UpdateCustomerAsync(Customer customer);
         Task DeleteCustomerAsync(int id);
+        Task<IEnumerable<CustomerOrder>> GetCustomerOrderDetails(int id);
+        Task<IEnumerable<CustomerOrder>> GetOrderPlacedCustomerDetails();
     }
 }

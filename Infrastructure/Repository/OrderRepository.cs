@@ -56,5 +56,11 @@ namespace Infrastructure.Repository
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<Order> GetLastOrderByIdAsync(int id)
+        {
+            var orderedCustomers = await _context.Orders.OrderByDescending(c => c.CustomerId==id).FirstOrDefaultAsync();
+            return orderedCustomers;
+        }
     }
 }

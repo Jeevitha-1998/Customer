@@ -15,5 +15,6 @@ namespace Core.Interfaces
         Task AddOrderAsync(Order order);
         Task UpdateOrderAsync(Order order);
         Task DeleteOrderAsync(int id);
+        Task<Order> GetLastOrderByIdAsync(int id);
     }
 }

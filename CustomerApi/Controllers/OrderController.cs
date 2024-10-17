@@ -81,5 +81,12 @@ namespace CustomerApi.Controllers
             await _orderService.DeleteOrderAsync(orderId);
             return NoContent();
         }
+
+        [HttpGet("GetLastOrderById/{id}")]
+        public async Task<IActionResult> GetLastOrderById(int id)
+        {
+            var orders = await _orderService.GetLastOrderByIdAsync(id);
+            return Ok(orders);
+        }
     }
 }

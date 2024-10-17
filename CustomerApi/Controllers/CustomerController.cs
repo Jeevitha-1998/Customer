@@ -78,5 +78,21 @@ namespace CustomerApi.Controllers
             await _customerService.UpdateCustomerAsync(customer);
             return NoContent();
         }
+
+        [HttpGet("GetCustomerOrderDetails/{id}")]
+        public async Task<ActionResult<IEnumerable<CustomerOrder>>> GetCustomerOrderDetails(int id)
+        {
+            var customer = await _customerService.GetCustomerOrderDetails(id);
+            if (customer == null) return NotFound();
+            return Ok(customer);
+        }
+
+        [HttpGet("GetOrderPlacedCustomerDetails")]
+        public async Task<ActionResult<IEnumerable<CustomerOrder>>> GetOrderPlacedCustomerDetails()
+        {
+            var customer = await _customerService.GetOrderPlacedCustomerDetails();
+            if (customer == null) return NotFound();
+            return Ok(customer);
+        }
     }
 }

@@ -52,5 +52,10 @@ namespace Core.Services
         {
             await _orderRepository.DeleteAsync(orderId);
         }
+
+        public async Task<Order> GetLastOrderByIdAsync(int id)
+        {
+            return await _orderRepository.GetLastOrderByIdAsync(id);
+        }
     }
 }

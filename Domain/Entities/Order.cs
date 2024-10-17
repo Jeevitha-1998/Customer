@@ -11,7 +11,8 @@ namespace Domain.Entities
     {
         [Key]
         public int Id { get; set; }
-
+        [Required]
+        public string ProductName { get; set; }
         [Required]
         public decimal Amount { get; set; }
 
